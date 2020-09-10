@@ -39,5 +39,12 @@ $(function () {
 		}
 	});
 	/* Переходы по ссылкам */
+	$('.nav_link').on('click', function (evt) {
+		evt.preventDefault();
+		let elem = $($(this).attr('href'));
 
+		$('html').animate({
+			scrollTop: elem.offset().top - 100,
+		}, 500)
+	})
 })
