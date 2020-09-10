@@ -58,6 +58,37 @@ a{
 	background-color: #616161;
 }
 
+.unvisible{
+	opacity: 0;
+}
+
+.btnUp{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 45px;
+	border-radius: 50%;
+
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	background: #016397;
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
+	z-index: 1000;
+
+	transition: background-color linear 0.3s, opacity linear 0.4s;
+}
+
+.btnUp:hover{
+	background-color: #dbbe00;
+}
+
+.btnUp:active{
+	background-color: #ff0000;
+}
+
 /* !Header  доделать затемнение*/
 .header{
 	min-height: 900px;
@@ -113,6 +144,7 @@ a{
 
 .header_begin{
 	min-height: 75px;
+	position: relative;
 	background-color: rgba(0, 0, 0, 0.4);
 	color: #ffffff;
 	font-family: 'Montserrat', sans-serif;
@@ -146,6 +178,8 @@ a{
 .header_begin .nav{
 	display: table;
 	height: 75px;
+
+	transition: opaicty linear 0.3s;
 }
 
 .header_begin .nav_link{
@@ -158,6 +192,7 @@ a{
 	text-transform: uppercase;
 	font-weight: 700;
 }
+
 
 .header_begin .nav_link::after{
 	content: "";
@@ -177,6 +212,46 @@ a{
 
 .header_begin .nav_link:active::after{
 	background-color: #ff0000;
+}
+
+.header_begin .menuMobile{
+	display: none;
+
+	width: 50px;
+	height: 5px;
+	background: #fff;
+
+
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: background-color linear 0.3s;
+}
+
+.header_begin .menuMobile::before, .header_begin .menuMobile::after{
+	content: '';
+	display: inline-block;
+
+	width: 60px;
+	height: 5px;
+	background: #fff;
+	position: absolute;
+	right: 0;
+	transition: background-color linear 0.3s;
+}
+
+.header_begin .menuMobile::before{
+	top: -10px;
+}
+
+.header_begin .menuMobile:active, .header_begin .menuMobile:active::before,.header_begin .menuMobile:active::after{
+	background-color: #ffdd00;
+}
+
+.header_begin .menuMobile::after{
+	bottom: -10px;
+	width: 40px;
 }
 
 .header_adventure{
@@ -583,7 +658,7 @@ a{
 
 .tours .item.spec{
 	transform: scale(1.2);
-	z-index: 2;
+	z-index: 20;
 }
 .tours .item.spec::after{
 	content: "";
@@ -951,12 +1026,30 @@ a{
 
 @media screen and (max-width: 992px){
 	/* !HEADER */
-	.header_begin .nav{
+	.nav_flex{
 		display: none;
 	}
+	.header_begin .nav {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 
-	.header_begin_logo_title{
-		margin-top: 0;
+		position: absolute;
+		right: 0;
+		bottom: -75px;
+	}
+
+	.header_begin .nav_link{
+		padding: 20px;
+		text-align: right;
+		background: rgba(0, 0, 0, 0.7);
+		border-bottom: 1px solid #fff;
+	}
+
+	
+
+	.header_begin .menuMobile{
+		display: inline-block;
 	}
 
 	.header_adventure_title{
@@ -975,6 +1068,7 @@ a{
 		padding: 20px 50px;
 	}
 
+	
 	/* !Trust */
 	.trust{
 		display: flex;
