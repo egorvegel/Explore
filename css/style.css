@@ -159,7 +159,7 @@ a{
 
 	position: fixed;
 	left: 0;
-	top: 102px;
+	top: 75px;
 	width: 100%;
 	z-index: 900;
 }
@@ -1346,8 +1346,8 @@ a{
 		line-height: 1;
 	}
 
-	.header_contacts  span{
-		width: 100%;
+	.header_contacts span{
+		width: 49%;
 		margin: 10px 0;
 		text-align: center;
 	}
@@ -1358,6 +1358,10 @@ a{
 	}
 	.header_adventure{
 		width: 95%;
+	}
+
+	.header_begin{
+		top: 67px;
 	}
 
 	/* !Hotels */
