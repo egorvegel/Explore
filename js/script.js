@@ -25,13 +25,19 @@ $(function () {
 	/* Меню */
 	$('.menuMobile').on('click', function (evt) {
 		evt.preventDefault();
-		if($(".nav_flex").css('display') == 'block'){
+		if ($(".nav_flex").css('display') == 'block') {
 			$('.nav_flex').hide(300);
-		}else{
+		} else {
 			$('.nav_flex').show(300);
 		}
 	})
 
+	$(window).resize(function () {
+		console.log(1);
+		if ($(this).width() > 992) {
+			$('.nav_flex').show(300);
+		}
+	});
 	/* Переходы по ссылкам */
 
 })
