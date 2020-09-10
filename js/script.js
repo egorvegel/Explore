@@ -46,5 +46,9 @@ $(function () {
 		$('html').animate({
 			scrollTop: elem.offset().top - 100,
 		}, 500)
+
+		if ($(window).width() < 992) {
+			$('.nav_flex').hide(300);
+		}
 	})
 })
