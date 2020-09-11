@@ -67,7 +67,7 @@ $(function () {
 				if (animItemHeight > window.innerHeight) {
 					animItemPoint = window.innerHeight - window.innerHeight / animStart;
 				}
-				if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				if ((pageYOffset > animItemOffset - animItemPoint) && (pageYOffset < animItemOffset + animItemHeight)) {
 					$(animItem).addClass('active');
 				} else {
 					$(animItem).addClass('remove');
