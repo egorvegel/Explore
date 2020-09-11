@@ -261,23 +261,22 @@ a{
 	width: 55%;
 	text-align: center;
 	color: #ffffff;
+
+	opacity: 0;
+	transform: translate(0, 80%);
+	transition: all 0.3s ease 0.2s;
+	overflow: hidden;
+}
+
+.header_adventure.active{
+	opacity: 1;
+	transform: translate(0, 0%);
 }
 
 .header_adventure_title{
 	font-size: 75px;
 	font-weight: bold;
-
-	opacity: 0;
-	transform: translate(0, 120%);
-	transition: all 1.5s ease 0.3s;
 }
-
-.header_adventure_title.active{
-	font-size: 75px;
-	font-weight: bold;
-	opacity: 1;
-	transform: translate(0, 0%);
-} 
 
 
 .header_adventure_subtitle{
@@ -286,6 +285,7 @@ a{
 	text-transform: uppercase;
 	letter-spacing: 10px;
 }
+
 
 .header_adventure_text{
 	margin: 50px 0;
@@ -419,6 +419,7 @@ a{
 	margin: 50px 0;
 }
 
+
 .trust .list_item{
 	padding-left: 50px;
 	margin-bottom: 25px;
@@ -427,7 +428,24 @@ a{
 	color: #040404;
 
 	background: url("../img/trust/accept.png") 0% 5px no-repeat;
+	opacity:  0;
+	transform: translate(-120%, 0);
+	transition: all 0.3s linear 0s;
 }
+
+.trust .list_item:nth-child(2){
+	transition-delay: 0.3s;
+}
+
+.trust .list_item:nth-child(3){
+	transition-delay: 0.6s;
+}
+
+.trust .list.active .list_item{
+	opacity:  1;
+	transform: translate(0, 0);
+}
+
 
 /* !Trust */
 .services{
@@ -766,6 +784,14 @@ a{
 	flex-basis: calc(33.333% - 45px);
 
 	margin: 0 22.5px 20px;
+	opacity: 0;
+	transform: scale(0);
+	transition: all 0.3s ease-in 0.3s;
+}
+
+.news .news_blocks.active .block{
+	opacity: 1;
+	transform: scale(1);
 }
 
 .news  .block_image{
