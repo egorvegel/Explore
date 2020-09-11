@@ -32,7 +32,7 @@ $(function () {
 			$(navMobile).show(300);
 		}
 	})
-
+	/* Скрываем моб меню при ширине больше 922 */
 	$(window).resize(function () {
 		if ($(this).width() > 992) {
 			$(navMobile).show(300);
@@ -51,4 +51,29 @@ $(function () {
 			$(navMobile).hide(300);
 		}
 	})
+
+	/* Анимация при прокрутке (скролле) страницы */
+	const animItems = $('.anim_item');
+	if (animItems.length > 0) {
+		$(window).on('scroll', animOnScroll);
+		function animOnScroll() {
+			for (let index = 0; index < animItems.length; index++) {
+				const animItem = animItems[index];
+				const animItemHeight = $(animItem).height();
+				const animItemOffset = $(animItem).offset().top;
+				const animStart = 4;
+
+				const animItemPoint = window.innerHeight - animItemHeight / animStart;
+				if (animItemHeight > window.innerHeight) {
+					animItemPoint = window.innerHeight - window.innerHeight / animStart;
+				}
+				if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+					$(animItem).addClass('active');
+				} else {
+					$(animItem).addClass('remove');
+				}
+			}
+		}
+	}
+	animOnScroll();
 })

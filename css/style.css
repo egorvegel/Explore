@@ -266,7 +266,19 @@ a{
 .header_adventure_title{
 	font-size: 75px;
 	font-weight: bold;
+
+	opacity: 0;
+	transform: translate(0, 120%);
+	transition: all 1.5s ease 0.3s;
 }
+
+.header_adventure_title.active{
+	font-size: 75px;
+	font-weight: bold;
+	opacity: 1;
+	transform: translate(0, 0%);
+} 
+
 
 .header_adventure_subtitle{
 	margin-top: 30px;
