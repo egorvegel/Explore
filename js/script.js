@@ -63,7 +63,7 @@ $(function () {
 				const animItemOffset = $(animItem).offset().top;
 				const animStart = 4;
 
-				const animItemPoint = window.innerHeight - animItemHeight / animStart;
+				let animItemPoint = window.innerHeight - animItemHeight / animStart;
 				if (animItemHeight > window.innerHeight) {
 					animItemPoint = window.innerHeight - window.innerHeight / animStart;
 				}
