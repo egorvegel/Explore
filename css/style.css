@@ -93,7 +93,7 @@ a{
 .header{
 	min-height: 100vh;
 	padding-top: 140px;
-	background: url("../img/header/bg.png") 50% 50% / cover no-repeat;
+	background: url("../img/header/bg.webp") 50% 50% / cover no-repeat;
 }
 
 .header_contacts{
