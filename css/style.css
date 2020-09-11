@@ -91,7 +91,7 @@ a{
 
 /* !Header  доделать затемнение*/
 .header{
-	min-height: 900px;
+	min-height: 100vh;
 	padding-top: 140px;
 	background: url("../img/header/bg.png") 50% 50% / cover no-repeat;
 }
@@ -1332,6 +1332,7 @@ a{
 	/* !HEADER */
 	.header_contacts{
 		line-height: 1;
+		display: none;
 	}
 
 	.header_contacts span{
@@ -1346,10 +1347,11 @@ a{
 	}
 	.header_adventure{
 		width: 95%;
+		margin: 50px auto 0;
 	}
 
 	.header_begin{
-		top: 67px;
+		top: 0px;
 	}
 
 	/* !Hotels */

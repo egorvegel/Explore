@@ -1,6 +1,6 @@
 $(function () {
 	/* BTN */
-	let btnUp = $('.btnUp');
+	const btnUp = $('.btnUp');
 	$(btnUp).on('click', function (evt) {
 		evt.preventDefault();
 
@@ -23,19 +23,19 @@ $(function () {
 	})
 
 	/* Меню */
+	const navMobile = $('.nav_flex');
 	$('.menuMobile').on('click', function (evt) {
 		evt.preventDefault();
-		if ($(".nav_flex").css('display') == 'block') {
-			$('.nav_flex').hide(300);
+		if ($(navMobile).css('display') == 'block') {
+			$(navMobile).hide(300);
 		} else {
-			$('.nav_flex').show(300);
+			$(navMobile).show(300);
 		}
 	})
 
 	$(window).resize(function () {
-		console.log(1);
 		if ($(this).width() > 992) {
-			$('.nav_flex').show(300);
+			$(navMobile).show(300);
 		}
 	});
 	/* Переходы по ссылкам */
@@ -44,11 +44,11 @@ $(function () {
 		let elem = $($(this).attr('href'));
 
 		$('html').animate({
-			scrollTop: elem.offset().top - 100,
+			scrollTop: elem.offset().top - 70,
 		}, 500)
 
 		if ($(window).width() < 992) {
-			$('.nav_flex').hide(300);
+			$(navMobile).hide(300);
 		}
 	})
 })
